@@ -150,6 +150,8 @@ class Game:
         print(f"{winner.getName()} won the game")
 
 
-grid = Grid(6, 7)
-game = Game(grid, 4, 2)
-game.play()
+if __name__ == '__main__':
+    grid = Grid(6, 7)
+    game = Game(grid, 4, 2)
+    game.play()
+

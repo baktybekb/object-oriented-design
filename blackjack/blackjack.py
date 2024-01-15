@@ -187,9 +187,9 @@ class GameRound:
         self.cleanupRound()
 
 
-player = UserPlayer(1000, Hand())
-dealer = Dealer(Hand())
+if __name__ == '__main__':
+    player = UserPlayer(1000, Hand())
+    dealer = Dealer(Hand())
 
-
-while player.getBalance() > 0:
-    gameRound = GameRound(player, dealer, Deck()).play()
+    while player.getBalance() > 0:
+        gameRound = GameRound(player, dealer, Deck()).play()
