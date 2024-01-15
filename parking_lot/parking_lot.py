@@ -1,3 +1,7 @@
+import datetime
+import math
+
+
 class Vehicle:
     def __init__(self, spot_size):
         self._spot_size = spot_size
@@ -88,10 +92,6 @@ class ParkingGarage:
         return False
 
 
-import datetime
-import math
-
-
 class ParkingSystem:
     def __init__(self, parkingGarage, hourlyRate):
         self._parkingGarage = parkingGarage
@@ -116,17 +116,18 @@ class ParkingSystem:
         return self._parkingGarage.remove_vehicle(driver.get_vehicle())
 
 
-parkingGarage = ParkingGarage(3, 2)
-parkingSystem = ParkingSystem(parkingGarage, 5)
+if __name__ == '__main__':
+    parkingGarage = ParkingGarage(3, 2)
+    parkingSystem = ParkingSystem(parkingGarage, 5)
 
-driver1 = Driver(1, Car())
-driver2 = Driver(2, Limo())
-driver3 = Driver(3, SemiTruck())
+    driver1 = Driver(1, Car())
+    driver2 = Driver(2, Limo())
+    driver3 = Driver(3, SemiTruck())
 
-print(parkingSystem.park_vehicle(driver1))  # true
-print(parkingSystem.park_vehicle(driver2))  # true
-print(parkingSystem.park_vehicle(driver3))  # false
+    print(parkingSystem.park_vehicle(driver1))  # true
+    print(parkingSystem.park_vehicle(driver2))  # true
+    print(parkingSystem.park_vehicle(driver3))  # false
 
-print(parkingSystem.remove_vehicle(driver1))  # true
-print(parkingSystem.remove_vehicle(driver2))  # true
-print(parkingSystem.remove_vehicle(driver3))  # false
+    print(parkingSystem.remove_vehicle(driver1))  # true
+    print(parkingSystem.remove_vehicle(driver2))  # true
+    print(parkingSystem.remove_vehicle(driver3))  # false
